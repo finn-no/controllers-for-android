@@ -27,7 +27,7 @@
     <groupId>no.birkett</groupId>
     <artifactId>controllers-for-android-parent</artifactId>
     <packaging>pom</packaging>
-    <version>20130503</version>
+    <version>20131020</version>
     
     <name>Controllers For Android Library (Parent)</name>
     <description>Helping to bring the single responsibility principle to Android development</description>
@@ -45,7 +45,6 @@
         <!-- Dependencies -->
         <android.version>4.1.1.4</android.version>
         <android.platform>16</android.platform>
-        <android.support.version>r7</android.support.version>
 
     </properties>
 
@@ -79,11 +78,6 @@
                 <groupId>com.google.android</groupId>
                 <artifactId>android</artifactId>
                 <version>${android.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.android</groupId>
-                <artifactId>support-v4</artifactId>
-                <version>${android.support.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

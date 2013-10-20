@@ -22,10 +22,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -56,7 +56,7 @@ public abstract class FragmentThatSupportsControllers extends Fragment {
     }
 
 
-    public void onInflate(FragmentActivity activity, AttributeSet attrs, Bundle savedInstanceState) {
+    public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
         super.onInflate(activity, attrs, savedInstanceState);
         Iterator<Controller> iterator = mControllers.iterator();
         while (iterator.hasNext()) {
@@ -64,7 +64,7 @@ public abstract class FragmentThatSupportsControllers extends Fragment {
         }
     }
 
-    public void onAttach(FragmentActivity activity) {
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
         Iterator<Controller> iterator = mControllers.iterator();
         while (iterator.hasNext()) {

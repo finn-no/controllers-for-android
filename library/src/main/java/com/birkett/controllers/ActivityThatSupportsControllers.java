@@ -18,12 +18,14 @@
 
 package com.birkett.controllers;
 
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -31,8 +33,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -45,7 +45,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 @SuppressLint("NewApi")
-public abstract class ActivityThatSupportsControllers extends FragmentActivity {
+public abstract class ActivityThatSupportsControllers extends Activity {
 
     protected ArrayList<Controller> mControllers;
 
@@ -649,8 +649,8 @@ public abstract class ActivityThatSupportsControllers extends FragmentActivity {
     }
 
     @Override
-    public Object onRetainCustomNonConfigurationInstance() {
-        Object object = super.onRetainCustomNonConfigurationInstance();
+    public Object onRetainNonConfigurationInstance() {
+        Object object = super.onRetainNonConfigurationInstance();
 
         if (object == null) {
             Iterator<Controller> iterator = mControllers.iterator();
