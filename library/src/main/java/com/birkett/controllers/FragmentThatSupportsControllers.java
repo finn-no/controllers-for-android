@@ -26,6 +26,8 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -258,5 +260,12 @@ public abstract class FragmentThatSupportsControllers extends Fragment {
         while (iterator.hasNext()) {
             iterator.next().onCreateContextMenu(menu, v, menuInfo);
         }
+    }
+    
+    public ActionBar getSupportActionBar() {
+        if (getActivity() instanceof ActionBarActivity) {
+            return ((ActionBarActivity) getActivity()).getSupportActionBar();
+        }
+        return null;
     }
 }

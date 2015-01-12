@@ -105,8 +105,6 @@ public abstract class Controller {
 
     protected void onConfigurationChanged(Configuration newConfig) { }
 
-    protected void onContentChanged() { }
-
     protected boolean onContextItemSelected(MenuItem item) {
         return false;
     }
@@ -173,10 +171,6 @@ public abstract class Controller {
     }
 
     protected void onLowMemory() { }
-
-    protected boolean onMenuItemSelected(int featureId, MenuItem item) {
-        return false;
-    }
 
     protected boolean onMenuOpened(int featureId, Menu menu) {
         return false;

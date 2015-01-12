@@ -18,8 +18,8 @@
 
 package com.birkett.controllers;
 
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -33,6 +33,7 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -45,11 +46,11 @@ import android.view.View;
 import android.view.WindowManager;
 
 @SuppressLint("NewApi")
-public abstract class ActivityThatSupportsControllers extends FragmentActivity {
+public abstract class ActionBarActivityThatSupportsControllers extends ActionBarActivity {
 
     protected ArrayList<Controller> mControllers;
 
-    protected ActivityThatSupportsControllers() {
+    protected ActionBarActivityThatSupportsControllers() {
         mControllers = new ArrayList<Controller>();
     }
 
@@ -118,7 +119,6 @@ public abstract class ActivityThatSupportsControllers extends FragmentActivity {
         return dialog;
     }
 
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         Iterator<Controller> iterator = mControllers.iterator();
